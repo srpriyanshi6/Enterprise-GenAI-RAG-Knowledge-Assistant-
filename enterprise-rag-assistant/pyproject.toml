@@ -1,0 +1,52 @@
+[project]
+name = "enterprise-rag-assistant"
+version = "1.0.0"
+description = "Enterprise-grade RAG system for document querying with GenAI"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+dependencies = [
+    "langchain>=0.1.0",
+    "langchain-community>=0.0.10",
+    "langchain-openai>=0.0.2",
+    "chromadb>=0.4.22",
+    "pypdf>=3.17.0",
+    "docx2txt>=0.8",
+    "tiktoken>=0.5.0",
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "streamlit>=1.29.0",
+    "python-multipart>=0.0.6",
+    "python-dotenv>=1.0.0",
+    "sentence-transformers>=2.2.2",
+    "faiss-cpu>=1.7.4",
+    "rank-bm25>=0.2.2",
+    "pydantic>=2.5.0",
+    "pytest>=7.4.0",
+    "plotly>=5.17.0",
+    "pandas>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.7.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "I", "N", "W", "UP"]
+
+[tool.black]
+line-length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
